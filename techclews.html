@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claire Lewis – Event AVL Technician</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ece3cf; --ink:#2d241c; --muted:#6b5a47; --accent:#9b4a33; --olive:#5f6b3a; --gold:#bf8f3a; --card:#e3d7b9;
+  --btn-text:#f6eedb; --cap:#f6efdc; --shadow:rgba(45,36,28,.18); --rust:#9b4a33; --tan:#c4a672;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --bg:#231b15; --ink:#e8dcc0; --muted:#b3a07e; --accent:#cd7b58; --olive:#a3b06f; --gold:#d9a441; --card:#2d231a; --btn-text:#f3ead2; --cap:#ece0c2; --shadow:rgba(0,0,0,.35); }
+}
+:root[data-theme="dark"]{ --bg:#231b15; --ink:#e8dcc0; --muted:#b3a07e; --accent:#cd7b58; --olive:#a3b06f; --gold:#d9a441; --card:#2d231a; --btn-text:#f3ead2; --cap:#ece0c2; --shadow:rgba(0,0,0,.35); }
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.7 "Libre Baskerville",Georgia,"Times New Roman",serif}
+h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.mono,nav a,.btn,.tags span,footer{font-family:"Courier Prime","Courier New",monospace;letter-spacing:.18em;text-transform:uppercase}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+header{position:relative;border-bottom:3px solid var(--ink)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+.logo{font:900 1.6rem "Playfair Display",Georgia,serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+nav{display:flex;gap:28px;flex-wrap:wrap}
+nav a{font-weight:700;font-size:.95rem;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--accent)}
+.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;padding:80px 0 70px}
+.eyebrow{color:var(--accent);font-size:.95rem;margin:0 0 30px}
+h1{font-weight:900;font-size:4rem;line-height:1.04;letter-spacing:-.02em;margin-bottom:.4em;max-width:none}
+h1 em{font-style:italic;font-weight:700;color:var(--accent)}
+.lead{color:var(--muted);font-size:1.05rem;max-width:30em;margin:0}
+.btns{display:flex;gap:20px;flex-wrap:wrap;margin-top:44px}
+.btn{display:inline-block;font-weight:700;font-size:.95rem;text-decoration:none;padding:18px 30px;border:3px solid var(--ink);background:var(--accent);color:var(--btn-text);box-shadow:6px 6px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn.ghost{background:var(--bg);color:var(--ink)}
+.btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.cbtn{background:none;border:0;padding:0;width:100%;cursor:pointer;display:block}
+.console{width:100%;height:auto;display:block}
+.portrait-frame{width:100%;max-width:340px;margin:0 auto 24px;padding:10px;border:3px solid var(--ink);background:var(--card);box-shadow:6px 6px 0 var(--accent);overflow:hidden}
+.portrait-frame img{width:100%;height:300px;display:block;border:2px solid var(--ink);object-fit:cover;object-position:center 32%}
+.hint{color:var(--muted);font-size:.78rem;text-align:center;margin:12px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.stats div{padding:40px 36px;border-left:2px solid var(--ink)}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font:700 3.6rem/1 "Playfair Display",Georgia,serif;color:var(--olive);margin-bottom:22px}
+.stats span{font-size:.9rem}
+section{padding:70px 0 20px}
+.stats{margin-bottom:0}
+.stats + section{padding-top:70px}
+.sh{display:flex;align-items:baseline;gap:22px;margin-bottom:40px}
+.sh .no{color:var(--gold);font-size:.95rem}
+h2{font-weight:700;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.08}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}
+.card{background:var(--card);border:3px solid var(--ink);padding:40px 44px 46px 50px}
+.card .mono{color:var(--accent);font-size:.82rem;margin:0 0 14px}
+.card h3{font-weight:700;font-size:1.9rem;line-height:1.15;margin-bottom:.4em}
+.card p{margin:0;color:var(--muted);font-size:1.05rem}
+.gig{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:30px 0;border-top:2px solid var(--ink)}
+.gig:last-child{border-bottom:2px solid var(--ink)}
+.gig .yr{color:var(--gold);font-size:1rem;padding-top:.6em}
+.gig h3{font-weight:700;font-size:1.8rem;line-height:1.2;margin-bottom:.25em}
+.gig p{margin:0;color:var(--muted);max-width:44em;font-size:1.05rem}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tags span{font-size:.76rem;letter-spacing:.12em;border:2px solid var(--ink);padding:2px 12px}
+.steps{list-style:none;margin:0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:16px;top:20px;bottom:14px;width:4px;background:var(--accent)}
+.steps li{position:relative;padding:0 0 38px 64px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:attr(data-n);position:absolute;left:-1px;top:-2px;width:36px;height:36px;border:3px solid var(--accent);border-radius:50%;background:var(--bg);
+  color:var(--accent);font:700 .95rem/30px "Courier Prime","Courier New",monospace;text-align:center}
+.steps h3,.steps p{margin:0}
+.steps h3{font-weight:700;font-size:1.8rem;line-height:1.2}
+.steps p{margin:.2em 0 0;color:var(--muted);font-size:1.1rem;line-height:1.6}
+.mission-card{background:var(--card);border:3px solid var(--ink);padding:40px 44px 46px 50px}
+.mission-card p{margin:0;color:var(--muted);font-size:1.05rem;max-width:none}
+.rates-card{background:var(--card);border:3px solid var(--ink);padding:38px 44px;text-align:center;box-shadow:6px 6px 0 var(--accent)}
+.rates-card h3{margin-bottom:.35em;font-size:2rem;color:var(--olive)}
+.rates-card p{max-width:48em;margin:0 auto;color:var(--muted);font-size:1.1rem;line-height:1.8}
+.rates-card .btn{margin-top:28px;box-shadow:4px 4px 0 var(--ink)}
+.contact{margin:90px auto 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:90px 0 100px;text-align:center}
+.contact .cbtn{max-width:380px;margin:0 auto 34px}
+.contact h2{font-size:clamp(2.6rem,7vw,5rem);margin:20px 0 22px}
+.contact p.t{color:var(--muted);font-size:1.25rem;max-width:36em;margin:0 auto}
+.contact .btns{justify-content:center}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px}
+.fader{transition:transform .9s cubic-bezier(.3,1.5,.5,1)}
+.o{stroke:var(--ink);stroke-linejoin:round;stroke-linecap:round}
+.sl{fill:var(--ink)}.cap{fill:var(--cap)}.shd{fill:var(--shadow)}
+@media (prefers-reduced-motion:reduce){.fader,.btn{transition:none}html{scroll-behavior:auto}}
+@media (max-width:900px){
+  .hero,.gig{grid-template-columns:1fr}.hero{padding:50px 0 50px}.gig{gap:6px}
+  .cbtn{max-width:420px;margin:0 auto}
+  .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0}.stats div:nth-child(n+3){border-top:2px solid var(--ink)}
+  .stats div{padding:28px 24px}
+  .card{padding:30px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">Claire Lewis - Event Technician</a>
+</div></header>
+
+<main id="top"><div class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow mono">Live Event Technician · Audio, Photography, &amp; Lighting</p>
+      <h1>To me it's more than a gig<em> I am passionate bringing your vision to life and creating special moments</em></h1>
+      <p class="lead">My primary discipline is Live Audio Engineering, with three years of experience in event production. Throughout this time, I have had the opportunity to travel across the Southeast with various ensembles. While audio is my main focus, I have also explored lighting and live video, developing a broader understanding of the industry. I've also been able to assist with weddings, and I've contracted with local churches throughout the Mobile/Baldwin area. Beyond live production, I also love capturing events through photography. Since high school, I have capurted a variety of events, I enjoy preserving beautiful and unique moments. As a senior in college, I am beginning to establish myself in the professional industry. I am passionate about the technical and creative aspects of production and love bringing events to life through sound, lighting, and visual storytelling.</p>
+      <div class="btns"><a class="btn" href="#gigs">My Experience</a><a class="btn ghost" href="#contact">Contact Me</a></div>
+    </div>
+    <div>
+      <figure class="portrait-frame">
+        <img src="IMG_0946 2.jpg" alt="Claire Lewis at an event">
+      </figure>
+      <button class="cbtn" type="button" aria-label="Cartoon audio console. Activate to move the faders."><svg class="console" id="c1" aria-hidden="true"></svg></button>
+      <p class="hint mono">Click me!</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div><b>3+</b><span class="mono">Years on the road</span></div>
+    <div><b>40+</b><span class="mono">Events</span></div>
+    <div><b>7</b><span class="mono">Outdoor Events</span></div>
+    <div><b>5+</b><span class="mono">Mobile/Baldwin County Churches</span></div>
+  </div>
+  <section id="craft">
+    <div class="sh"><span class="no mono">№ 01</span><h2>The Craft</h2></div>
+    <div class="grid">
+      <div class="card"><p class="mono">Audio</p><h3>FOH &amp; Broadcast mixing</h3><p>Experience in live environments ranging from overseas productions to large venues and small spaces. I have also mixed broadcast content. Dante Level 3 certified, and I regularly use Logic Pro and other DAWs.</p></div>
+      <div class="card"><p class="mono">Lighting</p><h3>Design &amp; Programming</h3><p>Experience with grandMA 2 and grandMA 3. Programmed lighting at First Baptist Church Fairhope and am continuing to learn lighting design.</p></div>
+      <div class="card"><p class="mono">Video</p><h3>Photo &amp; Video</h3><p>Experience in photography for 7+ years (on and off from childhood to highschool, I've always loved caputring moments). I have had a few opportunities in live video and graphics.</p></div>
+    </div>
+  </section>
+
+  <section id="gigs">
+    <div class="sh"><span class="no mono">№ 02</span><h2>A Glimpse into My Work</h2></div>
+    <div>
+      <article class="gig"><div class="yr mono">2024-Present</div><div><h3>FOH Contractor for Alabama Churches</h3><p>Provide contracted AVL support for more than five churches, including Covenant Presbyterian Church, Redemption Church, First Baptist Church Satsuma, and First Baptist Church Fairhope. Support includes audio, livestream, and lighting operation for Sunday mornings and Wednesday youth services.</p><div class="tags"><span>Audio</span><span>Video</span><span>Lighting</span></div></div></article>
+      <article class="gig"><div class="yr mono">2024-2025</div><div><h3>Touring FOH Engineer – Welsh Revival</h3><p>Served as FOH engineer for Welsh Revival, an all-female Celtic ensemble at the University of Mobile, during the 2024–2025 season.</p><div class="tags"><span>FOH</span><span>Touring</span><span>Celtic Ensemble</span></div></div></article>
+      <article class="gig"><div class="yr mono">2025-2026</div><div><h3>Touring FOH Engineer – Voices of Mobile</h3><p>Served as FOH engineer for the University of Mobile's Voices of Mobile during the 2025–2026 season. The ensemble traveled throughout the Southeast and took an overseas mission trip to Puerto Rico.</p><div class="tags"><span>FOH</span><span>Touring</span><span>Overseas Travel</span><span>Vocal Ensemble</span></div></div></article>
+      <article class="gig"><div class="yr mono">2026-2027</div><div><h3>Touring FOH Engineer – Sofree</h3><p>Currently serving as FOH engineer for Sofree, an all-female vocal ensemble at the University of Mobile, during the 2026–2027 season.</p><div class="tags"><span>FOH</span><span>Touring</span><span>Vocal Ensemble</span></div></div></article>
+      <article class="gig"><div class="yr mono">Various Years</div><div><h3>Indoor and Outdoor Events</h3><p>Photographed three events and provided audio support for two outdoor weddings, along with numerous campus events.</p><div class="tags"><span>FOH</span><span>Photography</span><span>Live Events</span></div></div></article>
+    </div>
+  </section>
+
+  <section id="showday">
+    <div class="sh"><span class="no mono">№ 03</span><h2>Show Day</h2></div>
+    <ol class="steps">
+      <li data-n="1"><h3>Planning</h3><p>Meet with you via phonecall or in person and discuss event details/rates</p></li>
+      <li data-n="2"><h3>Set Up </h3><p>Set up all equipment and ensure everything is functioning correctly.</p></li>
+      <li data-n="3"><h3>Event Execution</h3><p>Bring the plan to life! Operating the actual event and ensuring that your vision is realized.</p></li>
+      <li data-n="4"><h3>Strike</h3><p>Pack out clean and on schedule and efficiently.</p></li>
+    </ol>
+  </section>
+
+  <section id="rates">
+    <div class="sh"><span class="no mono">№ 04</span><h2>Rates</h2></div>
+    <div class="rates-card">
+      <h3>Affordable, Customized Support</h3>
+      <p>My goal is to keep rates affordable so cost does not stand in the way of bringing your vision to life. Pricing depends on the specific needs of your event, including the level of production support and travel required.</p>
+    </div>
+  </section>
+
+  <section id="mission-statement">
+    <div class="sh"><span class="no mono">№ 05</span><h2>Mission Statement</h2></div>
+    <div class="mission-card">
+      <p>I’m here to help make your event a seamless and stress-free experience. To me, it’s about more than just booking a gig; it’s about creating something personal, bringing your vision to life, and ensuring that every detail comes together. No matter the occasion, your event deserves more than just another performance; it deserves to be a memorable experience. The heart I put into my work is inspired by Colossians 3:23, which reminds me to approach everything I do with compassion, dedication, purpose, and excellence. Creativity and technology go hand in hand, and as an arts technician, my goal is to combine thoughtful planning, technical skill, and creativity to cultivate an experience that leaves a lasting impression.
+
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <button class="cbtn" type="button" aria-label="Cartoon audio console. Activate to move the faders."><svg class="console" id="c2" aria-hidden="true"></svg></button>
+    <p class="mono" style="color:var(--accent);font-size:.95rem;margin:0">Available for bookings</p>
+    <h2>Contact Me</h2>
+    <p class="t">I'm looking forward to meet you! Let's get in touch!</p>
+    <div class="btns">
+      <a class="btn" href="mailto:techclews@gmail.com">techclews@gmail.com</a>
+      <a class="btn ghost" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1FunSLscEoIbVgphYVARDvQWLKwnXIsoDEf3Hj6pyu0u3r_okDDJsJirW8ipT2KPgAYAzKn-qT?gv=true" target="_blank" rel="noopener noreferrer">Book an Event</a>
+    </div>
+</div></main>
+<footer>© Claire Lewis· Clue'd in for your technical needs</footer>
+
+<script>
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+  function build(svg,body,top,n){
+    svg.setAttribute('viewBox','0 0 440 280');
+    el('ellipse',{cx:220,cy:268,rx:185,ry:10,class:'shd'},svg);
+    el('path',{d:'M28 96 L412 96 L402 240 Q400 252 388 252 L52 252 Q40 252 38 240 Z',fill:body,'stroke-width':9,class:'o'},svg);
+    el('path',{d:'M70 26 L370 26 L412 96 L28 96 Z',fill:top,'stroke-width':9,class:'o'},svg);
+    var i,a=[-40,15,-10,55];
+    for(i=0;i<4;i++){
+      var kx=112+i*52,g=el('g',{transform:'rotate('+a[i]+' '+kx+' 62)'},svg);
+      el('circle',{cx:kx,cy:62,r:15,'stroke-width':5,class:'o cap'},g);
+      el('line',{x1:kx,y1:62,x2:kx,y2:50,'stroke-width':4,class:'o'},g);
+    }
+    el('rect',{x:316,y:50,width:24,height:24,rx:5,fill:body,opacity:.55,'stroke-width':4,class:'o'},svg);
+    el('rect',{x:350,y:50,width:24,height:24,rx:5,fill:'#d9a441','stroke-width':4,class:'o'},svg);
+    var f=[],step=272/(n-1);
+    for(i=0;i<n;i++){
+      var x=84+i*step;
+      el('rect',{x:x-6,y:112,width:12,height:122,rx:6,class:'sl'},svg);
+      var c=el('g',{class:'fader',transform:'translate(0,40)'},svg);
+      el('rect',{x:x-20,y:112,width:40,height:22,rx:8,'stroke-width':5,class:'o cap'},c);
+      f.push(c);
+    }
+    function mix(){f.forEach(function(c){c.setAttribute('transform','translate(0,'+Math.round(Math.random()*78)+')')})}
+    svg.parentNode.addEventListener('click',mix);
+    setTimeout(mix,350);
+  }
+  build(document.getElementById('c1'),'#9b4a33','#c4a672',6);
+  build(document.getElementById('c2'),'#5f6b3a','#b5b17c',6);
+})();
+</script>
+</body>
+</html>
