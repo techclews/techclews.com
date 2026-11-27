@@ -32,7 +32,7 @@ nav a{font-weight:700;font-size:.95rem;text-decoration:none;padding:4px 0;border
 nav a:hover{border-color:var(--accent)}
 .hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;padding:80px 0 70px}
 .eyebrow{color:var(--accent);font-size:.95rem;margin:0 0 30px}
-h1{font-weight:900;font-size:4rem;line-height:1.04;letter-spacing:-.02em;margin-bottom:.4em;max-width:none}
+h1{font-weight:900;line-height:1.04;letter-spacing:-.02em;margin-bottom:.4em;max-width:none}
 h1 em{font-style:italic;font-weight:700;color:var(--accent)}
 .lead{color:var(--muted);font-size:1.05rem;max-width:30em;margin:0}
 .btns{display:flex;gap:20px;flex-wrap:wrap;margin-top:44px}
@@ -91,6 +91,37 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px
 .fader{transition:transform .9s cubic-bezier(.3,1.5,.5,1)}
 .o{stroke:var(--ink);stroke-linejoin:round;stroke-linecap:round}
 .sl{fill:var(--ink)}.cap{fill:var(--cap)}.shd{fill:var(--shadow)}
+.view{display:none}.view.on{display:block}
+nav a[aria-current]{border-color:var(--accent);color:var(--accent)}
+.phead{padding:80px 0 10px}
+.phead{border-bottom:3px solid var(--ink);padding-bottom:50px;margin-bottom:40px}
+.intro-row{display:flex;align-items:center;gap:26px;margin-left:18px}
+.intro-row .lead{flex:1;min-width:0;max-width:44em}
+.gallery-camera{display:grid;place-items:center;flex:0 0 128px;width:128px;height:108px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+.gallery-camera svg{width:122px;height:98px;overflow:visible}
+.gallery-camera .camera-body{transform-origin:center;transition:transform .15s}
+.gallery-camera:hover .camera-body{transform:translateY(-2px) rotate(-3deg)}
+.gallery-camera .camera-flash,.gallery-camera .flash-rays{opacity:0;transform-box:fill-box;transform-origin:center}
+#gallery{scroll-margin-top:24px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.ph{background:var(--t,var(--card));border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.ph.tall{grid-row:span 2;aspect-ratio:auto;min-height:420px}
+.ph svg{position:absolute;left:50%;top:44%;width:42%;transform:translate(-50%,-50%)}
+.ph span{position:relative;background:var(--bg);border-top:3px solid var(--ink);padding:8px 14px;font-size:.8rem}
+.note{color:var(--muted);font-size:.85rem;margin:26px 0 0}
+
+.soc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.soc a{display:flex;align-items:center;gap:22px;text-decoration:none;background:var(--card);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:24px 28px;transition:transform .12s,box-shadow .12s}
+.soc a:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.soc svg{width:48px;height:48px;flex:none}
+.soc b{display:block;font:700 1.5rem "Playfair Display",Georgia,serif}
+.soc span{color:var(--muted);font-size:.8rem}
+.brand{display:flex;flex-direction:column;line-height:1.2}
+.brand .role{font:700 .72rem "Courier Prime","Courier New",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.gig.ev{grid-template-columns:minmax(0,1fr)}
+.gig.ev h3{position:relative;padding-left:22px}
+.gig.ev h3::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border:2px solid var(--gold);transform:rotate(45deg)}
+h1{font-size:clamp(2.4rem,6vw,4rem)}
 @media (prefers-reduced-motion:reduce){.fader,.btn{transition:none}html{scroll-behavior:auto}}
 @media (max-width:900px){
   .hero,.gig{grid-template-columns:1fr}.hero{padding:50px 0 50px}.gig{gap:6px}
@@ -98,21 +129,28 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px
   .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0}.stats div:nth-child(n+3){border-top:2px solid var(--ink)}
   .stats div{padding:28px 24px}
   .card{padding:30px}
+  .ph.tall{min-height:0;aspect-ratio:4/3}
+  .intro-row{margin-left:0;gap:14px}
+  .gallery-camera{flex-basis:92px;width:92px;height:80px}
+  .gallery-camera svg{width:88px;height:72px}
 }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="cam" viewBox="0 0 100 80"><path d="M10 24h20l6-10h28l6 10h20a4 4 0 0 1 4 4v42a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V28a4 4 0 0 1 4-4z" fill="var(--cap)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/><circle cx="50" cy="48" r="17" fill="var(--gold)" stroke="var(--ink)" stroke-width="4"/><circle cx="50" cy="48" r="7" fill="var(--ink)"/></symbol></svg>
 <header><div class="wrap">
-  <a class="logo" href="#top">Claire Lewis - Event Technician</a>
+  <div class="brand"><a class="logo" href="#home">Claire Lewis</a><span class="role">Event Technician</span></div>
+  <nav aria-label="Main"><a href="#home">Home</a><a href="#events">Event Services/Experience</a><a href="#photography">Photography</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main id="top"><div class="wrap">
+  <div class="view on" id="v-home">
   <div class="hero">
     <div>
       <p class="eyebrow mono">Live Event Technician · Audio, Photography, &amp; Lighting</p>
       <h1>To me it's more than a gig<em> I am passionate bringing your vision to life and creating special moments</em></h1>
       <p class="lead">My primary discipline is Live Audio Engineering, with three years of experience in event production. Throughout this time, I have had the opportunity to travel across the Southeast with various ensembles. While audio is my main focus, I have also explored lighting and live video, developing a broader understanding of the industry. I've also been able to assist with weddings, and I've contracted with local churches throughout the Mobile/Baldwin area. Beyond live production, I also love capturing events through photography. Since high school, I have capurted a variety of events, I enjoy preserving beautiful and unique moments. As a senior in college, I am beginning to establish myself in the professional industry. I am passionate about the technical and creative aspects of production and love bringing events to life through sound, lighting, and visual storytelling.</p>
-      <div class="btns"><a class="btn" href="#gigs">My Experience</a><a class="btn ghost" href="#contact">Contact Me</a></div>
+      <div class="btns"><a class="btn" href="#gigs">My Experience</a><a class="btn" href="#gallery">Gallery</a><a class="btn ghost" href="#contact">Contact Me</a></div>
     </div>
     <div>
       <figure class="portrait-frame">
@@ -123,6 +161,15 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px
     </div>
   </div>
 
+  <section id="mission-statement" style="padding-bottom:70px">
+    <div class="sh"><span class="no mono">№ 01</span><h2>Mission Statement</h2></div>
+    <div class="mission-card">
+      <p>I’m here to help make your event a seamless and stress-free experience. To me, it’s about more than just booking a gig; it’s about creating something personal, bringing your vision to life, and ensuring that every detail comes together. No matter the occasion, your event deserves more than just another performance; it deserves to be a memorable experience. The heart I put into my work is inspired by Colossians 3:23, which reminds me to approach everything I do with compassion, dedication, purpose, and excellence. Creativity and technology go hand in hand, and as an arts technician, my goal is to combine thoughtful planning, technical skill, and creativity to cultivate an experience that leaves a lasting impression.</p>
+    </div>
+  </section>
+  </div>
+  <div class="view" id="v-events">
+    <div class="phead"><p class="eyebrow mono">Event Services/Experience</p><h1>Sound, lights &amp; <em>every moment in between</em></h1><p class="lead">Audio, lighting and live video for churches, weddings, touring ensembles and campus events.</p></div>
   <div class="stats">
     <div><b>3+</b><span class="mono">Years on the road</span></div>
     <div><b>40+</b><span class="mono">Events</span></div>
@@ -158,24 +205,54 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px
       <li data-n="4"><h3>Strike</h3><p>Pack out clean and on schedule and efficiently.</p></li>
     </ol>
   </section>
-
+  </div>
+  <div class="view" id="v-photography">
+    <div class="phead"><p class="eyebrow mono">Photography</p><h1>There's always a story <em>behind the lens</em></h1><div class="intro-row"><p class="lead">Here's a glimpse into my work! I love capturing moments through a distinctive, vintage-inspired style, which is my primary focus. However, I enjoy exploring a variety of styles and bringing versatility and creativity to every project. Every picture tells a story, and I’m passionate about capturing those moments and preserving them through my lens. I would also love to capture graduation photos for high school and college, as well as provide headshots and stylistic photoshoots.</p><button class="gallery-camera" type="button" aria-label="Snap camera flash"><svg viewBox="0 0 120 90" aria-hidden="true"><g class="camera-body"><path d="M12 32q0-6 7-6h17l8-13h30l9 13h20q7 0 7 7v36q0 7-7 7H19q-7 0-7-7z" fill="var(--accent)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/><circle cx="59" cy="51" r="20" fill="var(--cap)" stroke="var(--ink)" stroke-width="4"/><circle cx="59" cy="51" r="13" fill="var(--gold)" stroke="var(--ink)" stroke-width="3"/><circle cx="59" cy="51" r="6" fill="var(--ink)"/><rect x="86" y="34" width="12" height="10" rx="3" fill="var(--cap)" stroke="var(--ink)" stroke-width="2.5"/><circle cx="25" cy="36" r="3" fill="var(--gold)"/></g><g class="flash-rays" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"><path d="M96 8v8M108 14l-6 6M113 27h-8"/></g><path class="camera-flash" d="M99 2l4 10 10-5-5 10 10 4-11 2 2 11-7-9-9 7 5-11-10-4 11-1z" fill="var(--gold)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/></svg></button></div></div>
+    <section id="gallery" style="padding-top:50px">
+      <div class="sh"><span class="no mono">№ 01</span><h2>Gallery</h2></div>
+      <div class="shots"><div class="ph tall" style="--t:var(--tan)"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:var(--card)"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:#b5b17c"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:var(--card)"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:var(--tan)"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:#b5b17c"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div></div>
+      <p class="note mono">Your moments are ones to remember</p>
+    </section>
+    <section>
+      <div class="sh"><span class="no mono">№ 02</span><h2>Events I Cover</h2></div>
+      <div>
+        <article class="gig ev">
+          <div><h3>Weddings &amp; Engagements</h3><p>I understand the stress of trying to find a photographer to capture your big day. I would love to capture you and your partner in a style that feels true to your story.</p></div>
+        </article>
+        <article class="gig ev">
+          <div><h3>Graduation Photos</h3><p>I would love to capture graduation photos for high school and college graduates, whether you are celebrating with friends, family or on your own.</p></div>
+        </article>
+        <article class="gig ev">
+          <div><h3>Self Portraits &amp; Headshots</h3><p>I offer portraits that feel natural and confident, including professional headshots and creative self portraits.</p></div>
+        </article>
+        <article class="gig ev">
+          <div><h3>Stylistic Photoshoots</h3><p>I can also create stylistic photoshoots tailored to your personality, vision and preferred aesthetic.</p></div>
+        </article>
+        <article class="gig ev">
+          <div><h3>Live Events</h3><p>I can photograph live events, capturing the energy, details and unforgettable moments as they happen.</p></div>
+        </article>
+      </div>
+    </section>
+  </div>
+  <div class="view" id="v-contact">
+    <div class="phead"><p class="eyebrow mono">Contact</p><h1>Let’s bring your <em>vision to life</em></h1><p class="lead">Rates and the easiest ways to get in touch.</p></div>
   <section id="rates">
-    <div class="sh"><span class="no mono">№ 04</span><h2>Rates</h2></div>
+    <div class="sh"><span class="no mono">№ 01</span><h2>Rates</h2></div>
     <div class="rates-card">
       <h3>Affordable, Customized Support</h3>
       <p>My goal is to keep rates affordable so cost does not stand in the way of bringing your vision to life. Pricing depends on the specific needs of your event, including the level of production support and travel required.</p>
     </div>
   </section>
 
-  <section id="mission-statement">
-    <div class="sh"><span class="no mono">№ 05</span><h2>Mission Statement</h2></div>
-    <div class="mission-card">
-      <p>I’m here to help make your event a seamless and stress-free experience. To me, it’s about more than just booking a gig; it’s about creating something personal, bringing your vision to life, and ensuring that every detail comes together. No matter the occasion, your event deserves more than just another performance; it deserves to be a memorable experience. The heart I put into my work is inspired by Colossians 3:23, which reminds me to approach everything I do with compassion, dedication, purpose, and excellence. Creativity and technology go hand in hand, and as an arts technician, my goal is to combine thoughtful planning, technical skill, and creativity to cultivate an experience that leaves a lasting impression.
 
+  <section id="social">
+    <div class="sh"><span class="no mono">№ 02</span><h2>Follow Me on Social Media!</h2></div>
+    <div class="soc">
+      <a href="https://www.instagram.com/techclews" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="6" y="6" width="36" height="36" rx="10" fill="var(--accent)"/><circle cx="24" cy="24" r="8" fill="var(--cap)"/><circle cx="34" cy="14" r="1.5" fill="var(--ink)"/></svg><div><b>Instagram</b><span class="mono">@techclews</span></div></a>
+      <a href="https://www.facebook.com/techclews" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="6" y="6" width="36" height="36" rx="6" fill="var(--tan)"/><path d="M30 42V26h5l1-6h-6v-4c0-2 1-3 3-3h3v-5h-4c-5 0-7 3-7 7v5h-5v6h5v16"/></svg><div><b>Facebook</b><span class="mono">techclews</span></div></a>
     </div>
   </section>
-
-  <div class="contact" id="contact">
+  <div class="contact">
     <button class="cbtn" type="button" aria-label="Cartoon audio console. Activate to move the faders."><svg class="console" id="c2" aria-hidden="true"></svg></button>
     <p class="mono" style="color:var(--accent);font-size:.95rem;margin:0">Available for bookings</p>
     <h2>Contact Me</h2>
@@ -184,8 +261,10 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px
       <a class="btn" href="mailto:techclews@gmail.com">techclews@gmail.com</a>
       <a class="btn ghost" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1FunSLscEoIbVgphYVARDvQWLKwnXIsoDEf3Hj6pyu0u3r_okDDJsJirW8ipT2KPgAYAzKn-qT?gv=true" target="_blank" rel="noopener noreferrer">Book an Event</a>
     </div>
+  </div>
+  </div>
 </div></main>
-<footer>© Claire Lewis· Clue'd in for your technical needs</footer>
+<footer>© techclews · Clue'd in for your technical needs</footer>
 
 <script>
 (function(){
@@ -216,8 +295,47 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px
     svg.parentNode.addEventListener('click',mix);
     setTimeout(mix,350);
   }
-  build(document.getElementById('c1'),'#9b4a33','#c4a672',6);
-  build(document.getElementById('c2'),'#5f6b3a','#b5b17c',6);
+  function B(i,a,b,c){var e=document.getElementById(i);if(e)build(e,a,b,c)}
+  B('c1','#9b4a33','#c4a672',6);
+  B('c2','#5f6b3a','#b5b17c',6);
+  var camera=document.querySelector('.gallery-camera');
+  if(camera){
+    camera.addEventListener('click',function(){
+      var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!reduced){
+        camera.querySelector('.camera-body').animate([
+          {transform:'translateY(0) rotate(0)'},
+          {transform:'translateY(3px) rotate(-3deg)'},
+          {transform:'translateY(0) rotate(0)'}
+        ],{duration:180,easing:'ease-out'});
+        camera.querySelector('.camera-flash').animate([
+          {opacity:0,transform:'scale(.2)'},
+          {opacity:1,transform:'scale(1.2)',offset:.35},
+          {opacity:0,transform:'scale(1.5)'}
+        ],{duration:360,easing:'ease-out'});
+        camera.querySelector('.flash-rays').animate([
+          {opacity:0,transform:'scale(.5)'},
+          {opacity:1,transform:'scale(1.15)',offset:.35},
+          {opacity:0,transform:'scale(1.4)'}
+        ],{duration:360,easing:'ease-out'});
+      }
+    });
+  }
+})();
+(function(){
+  var names=['home','events','photography','contact'];
+  function show(h){
+    names.forEach(function(n){document.getElementById('v-'+n).classList.toggle('on',n===h)});
+    var l=document.querySelectorAll('nav a');
+    for(var i=0;i<l.length;i++){if(l[i].getAttribute('href')==='#'+h)l[i].setAttribute('aria-current','page');else l[i].removeAttribute('aria-current')}
+  }
+  function route(){
+    var h=(location.hash||'').slice(1),el=h&&document.getElementById(h);
+    if(names.indexOf(h)>-1){show(h);window.scrollTo(0,0);return}
+    if(el){var v=el.closest('.view');if(v)show(v.id.slice(2));el.scrollIntoView()}
+    else{show('home');window.scrollTo(0,0)}
+  }
+  window.addEventListener('hashchange',route);route();
 })();
 </script>
 </body>
