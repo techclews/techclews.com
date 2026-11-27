@@ -1,0 +1,11 @@
+<header><div class="wrap">
+  <div class="brand">
+    <a class="logo" href="index.html">Claire Lewis</a>
+    <span class="role">Event Technician</span>
+  </div>
+  <nav aria-label="Main">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="index2.html">Photography</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div></header>
