@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claire Lewis - Event Technician– Photography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ece3cf; --ink:#2d241c; --muted:#6b5a47; --accent:#9b4a33; --olive:#5f6b3a; --gold:#bf8f3a; --card:#e3d7b9;
+  --btn-text:#f6eedb; --cap:#f6efdc; --shadow:rgba(45,36,28,.18); --rust:#9b4a33; --tan:#c4a672;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --bg:#231b15; --ink:#e8dcc0; --muted:#b3a07e; --accent:#cd7b58; --olive:#a3b06f; --gold:#d9a441; --card:#2d231a; --btn-text:#f3ead2; --cap:#ece0c2; --shadow:rgba(0,0,0,.35); }
+}
+:root[data-theme="dark"]{ --bg:#231b15; --ink:#e8dcc0; --muted:#b3a07e; --accent:#cd7b58; --olive:#a3b06f; --gold:#d9a441; --card:#2d231a; --btn-text:#f3ead2; --cap:#ece0c2; --shadow:rgba(0,0,0,.35); }
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.7 "Libre Baskerville",Georgia,"Times New Roman",serif}
+h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.mono,nav a,.btn,.tags span,footer{font-family:"Courier Prime","Courier New",monospace;letter-spacing:.18em;text-transform:uppercase}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+header{border-bottom:3px solid var(--ink)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+.logo{font:900 1.6rem "Playfair Display",Georgia,serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.brand{display:flex;flex-direction:column;line-height:1.2}
+.brand .role{font:700 .72rem "Courier Prime","Courier New",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+nav{display:flex;gap:28px;flex-wrap:wrap}
+nav a{font-weight:700;font-size:.95rem;text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--accent)}
+.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center;padding:80px 0 70px}
+.eyebrow{color:var(--accent);font-size:.95rem;margin:0 0 30px}
+h1{font-weight:900;font-size:clamp(3rem,8vw,6.2rem);line-height:1.04;letter-spacing:-.02em;margin-bottom:.4em;max-width:7.6em}
+h1 em{font-style:italic;font-weight:700;color:var(--accent)}
+.lead{color:var(--muted);font-size:1.2rem;max-width:30em;margin:0}
+.btns{display:flex;gap:20px;flex-wrap:wrap;margin-top:44px}
+.btn{display:inline-block;font-weight:700;font-size:.95rem;text-decoration:none;padding:18px 30px;border:3px solid var(--ink);background:var(--accent);color:var(--btn-text);box-shadow:6px 6px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn.ghost{background:var(--bg);color:var(--ink)}
+.btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.cbtn{background:none;border:0;padding:0;width:100%;cursor:pointer;display:block}
+.console{width:100%;height:auto;display:block}
+.hint{color:var(--muted);font-size:.78rem;text-align:center;margin:12px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.stats div{padding:40px 36px;border-left:2px solid var(--ink)}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font:700 3.6rem/1 "Playfair Display",Georgia,serif;color:var(--olive);margin-bottom:22px}
+.stats span{font-size:.9rem}
+section{padding:90px 0 20px}
+.sh{display:flex;align-items:baseline;gap:22px;margin-bottom:40px}
+.sh .no{color:var(--gold);font-size:.95rem}
+h2{font-weight:700;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.08}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}
+.card{background:var(--card);border:3px solid var(--ink);padding:40px 44px 46px 50px}
+.card .mono{color:var(--accent);font-size:.82rem;margin:0 0 14px}
+.card h3{font-weight:700;font-size:1.9rem;line-height:1.15;margin-bottom:.4em}
+.card p{margin:0;color:var(--muted);font-size:1.05rem}
+.gig{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;padding:30px 0;border-top:2px solid var(--ink)}
+.gig:last-child{border-bottom:2px solid var(--ink)}
+.gig .yr{color:var(--gold);font-size:1rem;padding-top:.6em}
+.gig h3{font-weight:700;font-size:1.8rem;line-height:1.2;margin-bottom:.25em}
+.gig p{margin:0;color:var(--muted);max-width:44em;font-size:1.05rem}
+.gig h3{position:relative;padding-left:22px}
+.gig h3::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border:2px solid var(--gold);transform:rotate(45deg)}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tags span{font-size:.76rem;letter-spacing:.12em;border:2px solid var(--ink);padding:2px 12px}
+.steps{list-style:none;margin:0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:16px;top:20px;bottom:-30px;width:4px;background:var(--accent)}
+.steps li{position:relative;padding:0 0 38px 64px}
+.steps li::before{content:attr(data-n);position:absolute;left:-1px;top:-2px;width:36px;height:36px;border:3px solid var(--accent);border-radius:50%;background:var(--bg);
+  color:var(--accent);font:700 .95rem/30px "Courier Prime","Courier New",monospace;text-align:center}
+.steps h3{font-weight:700;font-size:1.8rem;line-height:1.2}
+.steps p{margin:.2em 0 0;color:var(--muted);font-size:1.1rem}
+.contact{margin:90px auto 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:90px 0 100px;text-align:center}
+.contact .cbtn{max-width:380px;margin:0 auto 34px}
+.contact h2{font-size:clamp(2.6rem,7vw,5rem);margin:20px 0 22px}
+.contact p.t{color:var(--muted);font-size:1.25rem;max-width:36em;margin:0 auto}
+.contact .btns{justify-content:center}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px}
+.fader{transition:transform .9s cubic-bezier(.3,1.5,.5,1)}
+.o{stroke:var(--ink);stroke-linejoin:round;stroke-linecap:round}
+.sl{fill:var(--ink)}.cap{fill:var(--cap)}.shd{fill:var(--shadow)}
+.view{display:none}.view.on{display:block}
+nav a[aria-current]{border-color:var(--accent);color:var(--accent)}
+.phead{padding:80px 0 10px}.phead h1{font-size:clamp(2.6rem,7vw,5rem);max-width:12em}
+.phead{border-bottom:3px solid var(--ink);padding-bottom:50px;margin-bottom:40px}
+.intro-row{display:flex;align-items:center;gap:26px;margin-left:18px}
+.intro-row .lead{flex:1;min-width:0;max-width:44em}
+.gallery-camera{display:grid;place-items:center;flex:0 0 128px;width:128px;height:108px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+.gallery-camera svg{width:122px;height:98px;overflow:visible}
+.gallery-camera .camera-body{transform-origin:center;transition:transform .15s}
+.gallery-camera:hover .camera-body{transform:translateY(-2px) rotate(-3deg)}
+.gallery-camera .camera-flash,.gallery-camera .flash-rays{opacity:0;transform-box:fill-box;transform-origin:center}
+#gallery{scroll-margin-top:24px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.ph{background:var(--t,var(--card));border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);aspect-ratio:4/3;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.ph.tall{grid-row:span 2;aspect-ratio:auto;min-height:420px}
+.ph svg{position:absolute;left:50%;top:44%;width:42%;transform:translate(-50%,-50%)}
+.ph span{position:relative;background:var(--bg);border-top:3px solid var(--ink);padding:8px 14px;font-size:.8rem}
+.note{color:var(--muted);font-size:.85rem;margin:26px 0 0}
+.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:3px solid var(--ink)}
+.chain div{padding:26px 18px;border-left:3px solid var(--ink);background:var(--card);text-align:center}
+.chain div:first-child{border-left:0}.chain div:nth-child(even){background:var(--bg)}
+.chain b{display:block;font:700 1.35rem "Playfair Display",Georgia,serif;margin-bottom:6px}
+.chain span{color:var(--muted);font-size:.78rem}
+@media (max-width:900px){.chain{grid-template-columns:1fr}.chain div{border-left:0;border-top:3px solid var(--ink)}.chain div:first-child{border-top:0}.ph.tall{min-height:0;aspect-ratio:4/3}}
+@media (prefers-reduced-motion:reduce){.fader,.btn{transition:none}html{scroll-behavior:auto}}
+@media (max-width:900px){
+  .hero,.gig{grid-template-columns:1fr}.hero{padding:50px 0 50px}.gig{gap:6px}
+  .cbtn{max-width:420px;margin:0 auto}
+  .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){border-left:0}.stats div:nth-child(n+3){border-top:2px solid var(--ink)}
+  .stats div{padding:28px 24px}
+  .card{padding:30px}
+  .intro-row{margin-left:0;gap:14px}
+  .gallery-camera{flex-basis:92px;width:92px;height:80px}
+  .gallery-camera svg{width:88px;height:72px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="cam" viewBox="0 0 100 80"><path d="M10 24h20l6-10h28l6 10h20a4 4 0 0 1 4 4v42a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V28a4 4 0 0 1 4-4z" fill="var(--cap)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/><circle cx="50" cy="48" r="17" fill="var(--gold)" stroke="var(--ink)" stroke-width="4"/><circle cx="50" cy="48" r="7" fill="var(--ink)"/></symbol></svg>
+<header><div class="wrap">
+  <div class="brand"><a class="logo" href="https://claude.ai/artifact/GG91MH5ZpwUf9N9mQH974B" target="_blank" rel="noopener">Claire Lewis</a><span class="role">Event Technician</span></div>
+  <nav aria-label="Main"><a href="https://claude.ai/artifact/GG91MH5ZpwUf9N9mQH974B" target="_blank" rel="noopener">Home</a><a href="#top" aria-current="page">Photography
+    
+  </a><a href="https://claude.ai/artifact/29EC25RRkYBVvJYn9RTytk" target="_blank" rel="noopener">Live Audio</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top"><div class="wrap">
+  <div class="view on" id="v-photography">
+    <div class="phead"><p class="eyebrow mono">Photography</p><h1>There's always a story <em>behind the lens</em></h1><div class="intro-row"><p class="lead">Here's a glimpse into my work! I love capturing moments through a distinctive, vintage-inspired style, which is my primary focus. However, I enjoy exploring a variety of styles and bringing versatility and creativity to every project. Every picture tells a story, and I’m passionate about capturing those moments and preserving them through my lens. I would also love to capture graduation photos for high school and college, as well as provide headshots and stylistic photoshoots.</p><button class="gallery-camera" type="button" aria-label="Snap camera flash"><svg viewBox="0 0 120 90" aria-hidden="true"><g class="camera-body"><path d="M12 32q0-6 7-6h17l8-13h30l9 13h20q7 0 7 7v36q0 7-7 7H19q-7 0-7-7z" fill="var(--accent)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/><circle cx="59" cy="51" r="20" fill="var(--cap)" stroke="var(--ink)" stroke-width="4"/><circle cx="59" cy="51" r="13" fill="var(--gold)" stroke="var(--ink)" stroke-width="3"/><circle cx="59" cy="51" r="6" fill="var(--ink)"/><rect x="86" y="34" width="12" height="10" rx="3" fill="var(--cap)" stroke="var(--ink)" stroke-width="2.5"/><circle cx="25" cy="36" r="3" fill="var(--gold)"/></g><g class="flash-rays" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"><path d="M96 8v8M108 14l-6 6M113 27h-8"/></g><path class="camera-flash" d="M99 2l4 10 10-5-5 10 10 4-11 2 2 11-7-9-9 7 5-11-10-4 11-1z" fill="var(--gold)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/></svg></button></div></div>
+    <section id="gallery" style="padding-top:50px">
+      <div class="sh"><span class="no mono">№ 01</span><h2>Gallery</h2></div>
+      <div class="shots"><div class="ph tall" style="--t:var(--tan)"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:var(--card)"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:#b5b17c"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:var(--card)"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:var(--tan)"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div><div class="ph" style="--t:#b5b17c"><svg viewBox="0 0 100 80" aria-hidden="true"><use href="#cam"/></svg></div></div>
+      <p class="note mono">Your moments are ones to remember</p>
+    </section>
+    <section>
+      <div class="sh"><span class="no mono">№ 02</span><h2>Events I Cover</h2></div>
+      <div>
+        <article class="gig">
+          <div><h3>Weddings &amp; Engagements</h3><p>I understand the stress of trying to find a photographer to capture your big day. I would love to capture you and your partner in a style that feels true to your story.</p></div>
+        </article>
+        <article class="gig">
+          <div><h3>Graduation Photos</h3><p>I would love to capture graduation photos for high school and college graduates, whether you are celebrating with friends, family or on your own.</p></div>
+        </article>
+        <article class="gig">
+          <div><h3>Self Portraits &amp; Headshots</h3><p>I offer portraits that feel natural and confident, including professional headshots and creative self portraits.</p></div>
+        </article>
+        <article class="gig">
+          <div><h3>Stylistic Photoshoots</h3><p>I can also create stylistic photoshoots tailored to your personality, vision and preferred aesthetic.</p></div>
+        </article>
+        <article class="gig">
+          <div><h3>Live Events</h3><p>I can photograph live events, capturing the energy, details and unforgettable moments as they happen.</p></div>
+        </article>
+      </div>
+    </section>
+  </div>
+</div></main>
+<footer>© techclews · Clue'd in for your technical needs</footer>
+
+<script>
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+  function build(svg,body,top,n){
+    svg.setAttribute('viewBox','0 0 440 280');
+    el('ellipse',{cx:220,cy:268,rx:185,ry:10,class:'shd'},svg);
+    el('path',{d:'M28 96 L412 96 L402 240 Q400 252 388 252 L52 252 Q40 252 38 240 Z',fill:body,'stroke-width':9,class:'o'},svg);
+    el('path',{d:'M70 26 L370 26 L412 96 L28 96 Z',fill:top,'stroke-width':9,class:'o'},svg);
+    var i,a=[-40,15,-10,55];
+    for(i=0;i<4;i++){
+      var kx=112+i*52,g=el('g',{transform:'rotate('+a[i]+' '+kx+' 62)'},svg);
+      el('circle',{cx:kx,cy:62,r:15,'stroke-width':5,class:'o cap'},g);
+      el('line',{x1:kx,y1:62,x2:kx,y2:50,'stroke-width':4,class:'o'},g);
+    }
+    el('rect',{x:316,y:50,width:24,height:24,rx:5,fill:body,opacity:.55,'stroke-width':4,class:'o'},svg);
+    el('rect',{x:350,y:50,width:24,height:24,rx:5,fill:'#d9a441','stroke-width':4,class:'o'},svg);
+    var f=[],step=272/(n-1);
+    for(i=0;i<n;i++){
+      var x=84+i*step;
+      el('rect',{x:x-6,y:112,width:12,height:122,rx:6,class:'sl'},svg);
+      var c=el('g',{class:'fader',transform:'translate(0,40)'},svg);
+      el('rect',{x:x-20,y:112,width:40,height:22,rx:8,'stroke-width':5,class:'o cap'},c);
+      f.push(c);
+    }
+    function mix(){f.forEach(function(c){c.setAttribute('transform','translate(0,'+Math.round(Math.random()*78)+')')})}
+    svg.parentNode.addEventListener('click',mix);
+    setTimeout(mix,350);
+  }
+  function B(i,a,b,c){var e=document.getElementById(i);if(e)build(e,a,b,c)}
+  B('c1','#9b4a33','#c4a672',6);
+  B('c2','#5f6b3a','#b5b17c',6);
+  B('c3','#bf8f3a','#e3d7b9',8);
+  var camera=document.querySelector('.gallery-camera');
+  if(camera){
+    camera.addEventListener('click',function(){
+      var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!reduced){
+        camera.querySelector('.camera-body').animate([
+          {transform:'translateY(0) rotate(0)'},
+          {transform:'translateY(3px) rotate(-3deg)'},
+          {transform:'translateY(0) rotate(0)'}
+        ],{duration:180,easing:'ease-out'});
+        camera.querySelector('.camera-flash').animate([
+          {opacity:0,transform:'scale(.2)'},
+          {opacity:1,transform:'scale(1.2)',offset:.35},
+          {opacity:0,transform:'scale(1.5)'}
+        ],{duration:360,easing:'ease-out'});
+        camera.querySelector('.flash-rays').animate([
+          {opacity:0,transform:'scale(.5)'},
+          {opacity:1,transform:'scale(1.15)',offset:.35},
+          {opacity:0,transform:'scale(1.4)'}
+        ],{duration:360,easing:'ease-out'});
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
